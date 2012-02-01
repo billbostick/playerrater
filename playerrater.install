@@ -1,0 +1,33 @@
+<?php
+
+function playerrater_install() {
+  drupal_install_schema('playerrater');
+}
+
+function playerrater_uninstall() {
+  drupal_uninstall_schema('playerrater');
+}
+
+function playerrater_schema() {
+  $schema['playerrater'] = array(
+    'fields' => array(
+      'vid'     => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'nid'     => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'name'    => array('type' => 'varchar', 'length' => 255, 'not null' => TRUE, 'default' => ''),
+      'ranking' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+      'fgp'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'ftp'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'tpm'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'reb'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'ast'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'stl'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'blk'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'pts'     => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+      'score'   => array('type' => 'float', 'unsigned' => FALSE, 'not null' => TRUE, 'default' => 0),
+    ),
+    'primary key' => array('vid', 'nid'),
+  );
+
+  return $schema;
+}
+
